@@ -26,7 +26,7 @@ function retval = SEICR_OptSW (y,NP,lock_array,ibd)
   idx = 3;
   lock_fun = @(t) g_lock(t,lock_array); 
   eval_fun = @(t,eps) SEICR_Eval(NP,t,ibd,eps,ag,3,lock_fun);
-  [f, ep2, cvg, iter, corp, covp, covr, stdresid, Z, r2] = leasqr(t,y,eps,eval_fun,0.00000001,100);
+  [f, ep2, cvg, iter, corp, covp, covr, stdresid, Z, r2] = leasqr(t,y,eps,eval_fun,0.00000001,100,log(y+2));
   printf("Errores de aproximación (Segunda ola) \n"); 
   printf("R2: %f \n",r2); 
   printf("Intervalos de confianza 99 percentil: \n"); 

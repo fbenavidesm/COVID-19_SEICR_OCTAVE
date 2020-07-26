@@ -29,7 +29,7 @@ function retval = SEICR_OptFW (y,NP,T_cut)
   eval_fun = @(t,pin) SEICR_Eval(NP,t,pin,eps,ag,3,lock_fun);
   p = de_min(err_fun,"XVmin",[0 0 0],"XVmax",pin,"constr",1,"maxiter",40,"NP",20,...
                     "strategy",3,"CR",0.25,"F",0.8,"tol",0.00001);
-  [f, p2, cvg, iter, corp, covp, covr, stdresid, Z, r2] = leasqr(t,y,p,eval_fun,0.00000001,100);
+  [f, p2, cvg, iter, corp, covp, covr, stdresid, Z, r2] = leasqr(t,y,p,eval_fun,0.00000001,100,log(y+2));
   printf("Errores de aproximación (primera ola) \n"); 
   printf("R2: %f \n",r2); 
   printf("Intervalos de confianza 99 percentil: \n"); 

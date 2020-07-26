@@ -28,6 +28,6 @@ function pin = SEICR_Params (y, T_cut, NP)
   end  
   eps = SEICR_OptSW(y,NP,array,ibd);
   pin(6) = eps;
-  pin(3) = 1/5.5;
+  pin(3) = 1/6;
   pin(5) = 1/21;  
 endfunction
